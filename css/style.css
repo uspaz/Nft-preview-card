@@ -13,41 +13,66 @@ body {
   justify-content: center; }
   .container .card {
     width: 275px;
-    height: 500px;
     border-radius: 15px;
     padding: 25px;
     background-color: #14253d;
     box-shadow: 0px 40px 50px 10px rgba(0, 0, 0, 0.4); }
     .container .card .cube-img {
       width: 100%;
-      border-radius: 10px; }
+      position: relative; }
+      .container .card .cube-img img {
+        width: 100%;
+        border-radius: 10px; }
+      .container .card .cube-img:hover {
+        cursor: pointer; }
+        .container .card .cube-img:hover::after {
+          content: '';
+          position: absolute;
+          left: 0px;
+          width: 275px;
+          height: 275px;
+          border-radius: 10px;
+          background-color: rgba(0, 128, 123, 0.5);
+          background-image: url("../images/icon-view.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-blend-mode: color; }
     .container .card .content {
       font-family: 'Outfit', sans-serif; }
       .container .card .content .title {
         color: white;
         margin-bottom: 10px; }
+        .container .card .content .title:hover {
+          color: #00fff7;
+          cursor: pointer; }
       .container .card .content .text {
         color: #5a6f8e;
         line-height: 25px;
         font-weight: 300; }
       .container .card .content .info {
+        height: 20px;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 15px; }
+        margin: 25px 0px; }
         .container .card .content .info .et {
           display: flex;
           color: #00fff7;
           gap: 8px; }
           .container .card .content .info .et img {
-            width: 13px;
-            height: 20px; }
+            width: 11px;
+            height: 18px; }
+          .container .card .content .info .et span {
+            font-size: .94rem; }
         .container .card .content .info .time {
           display: flex;
+          align-items: center;
           gap: 8px;
           color: #8aaadb; }
           .container .card .content .info .time img {
-            width: 20px;
-            height: 20px; }
+            width: 17px;
+            height: 17px; }
+          .container .card .content .info .time span {
+            font-size: .94rem; }
     .container .card hr {
       border: none;
       border-top: 1px solid #2f415b; }
@@ -69,3 +94,6 @@ body {
         .container .card .create h3 span {
           color: #fff;
           font-weight: 300; }
+          .container .card .create h3 span:hover {
+            color: #00fff7;
+            cursor: pointer; }

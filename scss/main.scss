@@ -17,7 +17,6 @@ body {
 
   .card {
     width: 275px;
-    height: 500px;
     border-radius: 15px;
     padding: 25px;
     background-color: hsl(216, 50%, 16%);
@@ -25,7 +24,27 @@ body {
 
     .cube-img {
       width: 100%;
-      border-radius: 10px;
+      position: relative;
+      img{
+        width: 100%;
+        border-radius: 10px;
+      }
+      &:hover{
+        cursor: pointer;
+        &::after{
+          content: '';
+          position: absolute;
+          left: 0px;
+          width: 275px;
+          height: 275px;
+          border-radius: 10px;
+          background-color: rgba(0, 128, 123, .5);
+          background-image: url("../images/icon-view.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-blend-mode: color;
+        }
+      }
     }
 
     .content {
@@ -34,6 +53,10 @@ body {
       .title {
         color: hsl(0, 0%, 100%);
         margin-bottom: 10px;
+        &:hover{
+          color: hsl(178, 100%, 50%);
+          cursor: pointer;
+        }
       }
 
       .text {
@@ -43,9 +66,10 @@ body {
       }
 
       .info {
+        height: 20px;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 15px;
+        margin: 25px 0px;
 
         .et {
           display: flex;
@@ -53,19 +77,26 @@ body {
           gap: 8px;
 
           img {
-            width: 13px;
-            height: 20px;
+            width: 11px;
+            height: 18px;
+          }
+          span{
+            font-size: .94rem;
           }
         }
 
         .time {
           display: flex;
+          align-items: center;
           gap: 8px;
           color: #8aaadb;
 
           img {
-            width: 20px;
-            height: 20px;
+            width: 17px;
+            height: 17px;
+          }
+          span{
+            font-size: .94rem;
           }
         }
       }
@@ -98,6 +129,10 @@ body {
         span {
           color: #fff;
           font-weight: 300;
+          &:hover{
+            color: hsl(178, 100%, 50%);
+            cursor: pointer;
+          }
         }
       }
     }
